@@ -1,34 +1,280 @@
 <!doctype html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="RentManager Pro Enterprise — smart rent management, billing and cloud sync.">
-<title>RentManager Pro Enterprise</title>
-<style>
-:root{--navy:#142D59;--blue:#0878E8;--purple:#8616C9;--teal:#00BFA6;--cream:#f7f9fc;--ink:#17243b}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
-header{background:linear-gradient(120deg,var(--navy),var(--blue),var(--purple));color:#fff;padding:64px 20px 56px;text-align:center}
-.brand{font-weight:800;letter-spacing:.2px;font-size:clamp(2rem,5vw,3.3rem);margin:0}
-.tag{font-size:clamp(1rem,2.5vw,1.25rem);margin:12px 0 0}
-.wrap{max-width:960px;margin:auto;padding:28px 18px 52px}
-.card{background:#fff;border:1px solid #e5eaf2;border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 8px 28px rgba(20,45,89,.06)}
-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
-nav a,.button{display:block;text-decoration:none;background:#fff;border:1px solid #dbe4f0;border-radius:12px;padding:15px;color:var(--navy);font-weight:700}
-nav a:hover,.button:hover{border-color:var(--blue);background:#f1f7ff}
-h2{color:var(--navy);margin-top:0}a{color:#075fc0}footer{text-align:center;padding:24px;background:#edf2f8;color:#46546b;font-size:.92rem}
-.small{font-size:.92rem;color:#526078}
-</style></head>
-<body>
-<header><h1 class="brand">RentManager Pro Enterprise</h1><p class="tag">Smart Rent Management. Simple, Secure, Organized.</p></header>
-<main class="wrap">
-<section class="card"><h2>Welcome</h2><p>RentManager Pro Enterprise is designed to help property owners organize rental records, billing, payments, expenses and tenant-related information.</p><p class="small">Please read the policies below to understand how information is handled and how to contact us.</p></section>
-<nav aria-label="Legal and support pages">
-<a href="privacy-policy.html">Privacy Policy →</a>
-<a href="terms-and-conditions.html">Terms &amp; Conditions →</a>
-<a href="account-deletion.html">Account Deletion →</a>
-<a href="contact.html">Contact →</a>
-</nav>
-<section class="card"><h2>Contact</h2><p>For privacy, account or support questions, email <a href="mailto:rentmanagerproenterprises@gmail.com">rentmanagerproenterprises@gmail.com</a>.</p></section>
-</main>
-<footer>© RentManager Pro Enterprise. All rights reserved.</footer>
-</body></html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RentManager Pro Enterprise helps property owners organize rental records, billing, payments, expenses and tenant information.">
+  <meta name="theme-color" content="#142D59">
+  <title>RentManager Pro Enterprise | Smart Rent Management</title>
+  <style>
+    :root{
+      --navy:#142D59;
+      --blue:#0878E8;
+      --purple:#8616C9;
+      --teal:#00BFA6;
+      --cream:#f7f9fc;
+      --ink:#17243b;
+      --muted:#5b6880;
+      --border:#e3eaf4;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      line-height:1.7;
+    }
+    a{color:var(--blue)}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:76px 20px 70px;
+      text-align:center;
+      color:#fff;
+      background:linear-gradient(125deg,var(--navy),var(--blue),var(--purple));
+    }
+    .hero:before,.hero:after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+      background:rgba(255,255,255,.08);
+    }
+    .hero:before{width:260px;height:260px;top:-130px;left:-70px}
+    .hero:after{width:330px;height:330px;bottom:-220px;right:-80px}
+    .hero-inner{position:relative;z-index:1;max-width:850px;margin:auto}
+    .eyebrow{
+      display:inline-block;
+      padding:5px 13px;
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:30px;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:2px;
+    }
+    h1{
+      font-size:clamp(2.1rem,6vw,3.6rem);
+      line-height:1.15;
+      letter-spacing:-1px;
+      margin:18px 0 12px;
+    }
+    .tagline{font-size:clamp(1rem,3vw,1.3rem);margin:0;color:#eef5ff}
+    .hero-note{max-width:650px;margin:18px auto 0;color:#e1ecff}
+    .wrap{width:min(100% - 32px,1000px);margin:auto;padding:34px 0 54px}
+    .section-heading{text-align:center;margin:8px auto 24px;max-width:700px}
+    .section-heading h2{margin-bottom:8px;color:var(--navy);font-size:clamp(1.5rem,4vw,2rem)}
+    .section-heading p{margin:0;color:var(--muted)}
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:26px;
+      margin:20px 0;
+      box-shadow:0 10px 30px rgba(20,45,89,.055);
+    }
+    .intro-card{border-top:4px solid var(--teal)}
+    .intro-card h2,.support-card h2{color:var(--navy);margin-top:0}
+    .features{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:15px;
+      margin:24px 0 34px;
+    }
+    .feature{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:0 6px 20px rgba(20,45,89,.035);
+    }
+    .feature-icon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:#edf5ff;
+      color:var(--navy);
+      font-size:1.25rem;
+      margin-bottom:10px;
+    }
+    .feature h3{margin:0 0 5px;color:var(--navy);font-size:1.05rem}
+    .feature p{margin:0;color:var(--muted);font-size:.94rem}
+    .link-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:13px;
+    }
+    .link-card{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:17px 18px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+      text-decoration:none;
+      color:var(--navy);
+      font-weight:750;
+      transition:transform .18s,border-color .18s,background .18s;
+    }
+    .link-card:hover{
+      transform:translateY(-2px);
+      border-color:var(--blue);
+      background:#f1f7ff;
+    }
+    .arrow{font-size:1.2rem;color:var(--blue)}
+    .support-card{
+      text-align:center;
+      background:linear-gradient(135deg,#fff,#f0f7ff);
+      border-color:#dce9fa;
+    }
+    .support-card p{color:var(--muted)}
+    .email-button{
+      display:inline-block;
+      max-width:100%;
+      padding:12px 20px;
+      border-radius:12px;
+      background:var(--navy);
+      color:#fff;
+      text-decoration:none;
+      font-weight:750;
+      overflow-wrap:anywhere;
+    }
+    .email-button:hover{background:var(--blue)}
+    .small{font-size:.9rem;color:var(--muted)}
+    footer{
+      text-align:center;
+      padding:25px 18px;
+      background:#edf2f8;
+      color:#46546b;
+      font-size:.9rem;
+      border-top:1px solid var(--border);
+    }
+    footer p{margin:5px 0}
+    .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin:12px 0}
+    .footer-links a{color:var(--navy);text-decoration:none}
+    .footer-links a:hover{text-decoration:underline}
+    @media(max-width:600px){
+      .hero{padding:58px 18px 52px}
+      .wrap{width:calc(100% - 24px);padding-top:24px}
+      .card{padding:20px;border-radius:16px}
+      .features,.link-grid{grid-template-columns:1fr}
+      .feature{padding:17px}
+      .link-card{padding:15px}
+    }
+  </style>
+</head>
+<body>  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">RENTAL MANAGEMENT</span>
+      <h1>RentManager Pro<br>Enterprise</h1>
+      <p class="tagline">Smart Rent Management. Simple, Secure, Organized.</p>
+      <p class="hero-note">
+        A practical way to organize rental records, billing, payments
+        and property-related information.
+      </p>
+    </div>
+  </header>  <main class="wrap"><section class="card intro-card">
+  <h2>Welcome to RentManager Pro Enterprise</h2>
+  <p>
+    RentManager Pro Enterprise is designed to help property owners
+    organize their rental-management records in one place. Use the
+    available app features to maintain tenant information, review
+    rental bills, track payment entries and organize expenses.
+  </p>
+  <p class="small">
+    Please review our policies to understand your responsibilities,
+    information handling practices and available account-deletion procedure.
+  </p>
+</section>
+
+<section aria-labelledby="features-heading">
+  <div class="section-heading">
+    <h2 id="features-heading">Rental Management, Organized</h2>
+    <p>Tools designed to help keep everyday rental records organized.</p>
+  </div>
+
+  <div class="features">
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">⌂</div>
+      <h3>Property &amp; Tenant Records</h3>
+      <p>Organize property details and tenant-related information.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">₹</div>
+      <h3>Bills &amp; Payments</h3>
+      <p>Maintain rental bills, payment entries and balance records.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">▤</div>
+      <h3>Expenses &amp; Complaints</h3>
+      <p>Keep relevant expense and complaint records organized.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">☁</div>
+      <h3>Data &amp; Account Information</h3>
+      <p>Review our privacy and account-deletion information before using the App.</p>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="resources-heading">
+  <div class="section-heading">
+    <h2 id="resources-heading">Policies &amp; Support</h2>
+    <p>Find important information about using the App and managing your account.</p>
+  </div>
+
+  <nav class="link-grid" aria-label="Policies and support pages">
+    <a class="link-card" href="privacy-policy.html">
+      <span>Privacy Policy</span><span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="link-card" href="terms-and-conditions.html">
+      <span>Terms &amp; Conditions</span><span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="link-card" href="account-deletion.html">
+      <span>Account Deletion</span><span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="link-card" href="contact.html">
+      <span>Contact &amp; Support</span><span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+</section>
+
+<section class="card support-card">
+  <h2>Need Help?</h2>
+  <p>
+    For privacy questions, account-deletion requests or general support,
+    contact us by email.
+  </p>
+  <a class="email-button" href="mailto:rentManagerproenterprises@gmail.com">
+    Contact Support
+  </a>
+  <p class="small">
+    rentManagerproenterprises@gmail.com
+  </p>
+</section>
+
+  </main>  <footer>
+    <p><strong>RentManager Pro Enterprise</strong></p>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="account-deletion.html">Account Deletion</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p>© 2026 RentManager Pro Enterprise. All rights reserved.</p>
+  </footer></body>
+</html>
