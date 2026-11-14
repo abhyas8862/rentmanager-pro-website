@@ -396,6 +396,25 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .arrow { color: var(--blue); font-size: 1.2rem; }
 
+.contact-card { padding: 22px; margin-top: 20px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.contact-item {
+  padding: 14px;
+  background: #EDF6FF;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.contact-item strong { display: block; color: var(--navy); margin-bottom: 3px; }
+.contact-item span, .contact-item a { color: var(--muted); font-size: .9rem; overflow-wrap: anywhere; }
+.contact-item a { color: #075FC0; font-weight: 700; text-decoration: none; }
+
 .support {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -463,6 +482,7 @@ footer {
   .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .policy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .app-links { justify-content: center; }
+  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 560px) {
@@ -488,6 +508,7 @@ footer {
   .support { grid-template-columns: 1fr; text-align: center; gap: 15px; padding: 17px; }
   .support-action { border-left: 0; border-top: 1px solid #B8D0F4; padding: 15px 0 0; }
   .footer-links { gap: 8px 12px; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -773,6 +794,55 @@ footer {
       </a>
 
     </nav>
+  </section>
+
+  <section class="card contact-card" id="contact" aria-labelledby="contact-heading">
+    <div class="section-heading" style="margin-top:0">
+      <h2 id="contact-heading">Contact Details</h2>
+      <p>We support both the Owner App and the Customer App.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <strong>Email</strong>
+        <a href="mailto:rentManagerproenterprises@gmail.com">rentManagerproenterprises@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        <strong>Phone</strong>
+        <a href="tel:+918292847426">+91-8292847426</a>
+      </div>
+
+      <div class="contact-item">
+        <strong>Address</strong>
+        <span>Purani Bazar, Shahpur Patory, Samastipur, Bihar - 848504</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>Business Name</strong>
+        <span>RentManager Pro Enterprise</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>Apps Supported</strong>
+        <span>RentManager Pro Enterprise (Owner App) and RentManager Pro Customer App</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>Privacy Questions</strong>
+        <span>Write to us by email about either app&rsquo;s privacy policy.</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>Account Deletion</strong>
+        <span>Email us from your registered email, or use the steps on the <a href="account-deletion.html">Account Deletion page</a>.</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>General Support</strong>
+        <span>Tell us which app you use and describe the problem, so we can help faster.</span>
+      </div>
+    </div>
   </section>
 
   <section class="support">
